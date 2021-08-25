@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+
+    </head>
+
+
+    <body>
+        <h1>Fundamentos de JavaScript</h1>
+        <script>
+            //objetos se beden declarar con const
+
+            const b={
+
+            }
+
+            const jon={
+                nombre:"Jon",
+                apellido:"Torres",
+                edad:35,
+                pasatiempo:["caminar","bicicleta","Futbol"],
+                sotero:false,
+                contacto:{
+                    email:"jontorres@algo.com",
+                    twitter:"@jontorres",
+                    telefono:"3245614587",
+
+                    
+                },
+                saludar:function(){
+                        console.log("Hola a todos")
+                    },
+                decirMiNombre:function(){
+                    console.log(`hola mi nombre ${this.nombre} y me pueden seguir en ${this.contacto.twitter} y mi pasatiempo es ${this.pasatiempo[0]}`)
+                }
+
+            }
+            console.log(jon.nombre)
+            console.log(jon.pasatiempo)
+            console.log(jon.pasatiempo[2])
+            console.log(jon.contacto.twitter)
+            jon.saludar();
+            jon.decirMiNombre();
+            console.log(Object.keys(jon))
+            console.log(Object.values(jon))
+            
+
+            
+        </script>
+    </body>
+
+
+</html>

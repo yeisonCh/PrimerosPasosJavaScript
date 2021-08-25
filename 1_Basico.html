@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+
+    </head>
+
+
+    <body>
+        <h1>Fundamentos de JavaScript</h1>
+        <script>
+            let hola ="Hola mundo";
+            console.log(hola);
+
+            var musica = "Rock";
+            console.log("Imprimimos la variable musica antes del bloque", musica);
+
+            {
+                var musica = "POP";
+                console.log("Imprimimos la variable musica dentro del bloque", musica);
+
+            }
+
+             console.log("Imprimimos la variable musica despues del bloque", musica);
+
+             console.log("------------------Ejemplo con let ----------------------");
+
+             let musica2 = "Rock";
+            console.log("Imprimimos la variable musica antes del bloque", musica2);
+
+            {
+                let musica2 = "POP";
+                console.log("Imprimimos la variable musica dentro del bloque", musica2);
+
+            }
+
+             console.log("Imprimimos la variable musica despues del bloque", musica2);
+
+            console.log ("----- uos de la palabra const ----------");
+
+            //a las constantes se deben asignar un valor, no se puede crear una constante sin asignar.
+
+            const objeto= {
+
+                nombre:"Andres",
+                edad:38,
+            }
+
+            console.log(objeto.nombre);
+
+             let colores=["azul","blanco","verde"];
+
+            console.log(colores);
+
+            objeto.email="Andres@hotmail.com";
+
+            console.log(objeto);
+            console.log(colores);
+
+            //las constantes no deja agregar o cambiar su valor con los datsos de tipos primitivos
+            /*
+            con los objetos, arreglos y demás, si nos permite agregar propiedades, no importa si uilizamos
+            const, var o let 
+            
+            */
+            //CADENA DE TEXTO aka STRING
+
+            //podemos usar comillas simples o dobles
+            let nombre="Andres";
+            let apellido='Chaparro';
+
+            let hijo =new String ("Josue");
+
+            console.log(nombre,apellido,hijo);
+
+            console.log ("el nombre ", nombre, "tiene",nombre.length, "caracteres");
+
+            /*podemos utilizar una varible con sus atributos, ya que en JavaScript to es un objeto 
+            y tiene propiedades y metodos
+
+            ejemplo
+            */
+
+            console.log (nombre.toLowerCase(), apellido.toUpperCase());
+
+            /*
+            concatenación e interpolación  
+            */
+            //concatenación 
+            let nombre2 ='Josue';
+            let apellido2 ="Chaparro";
+
+            let saludo= "Hola mi nombre es " +nombre + " " + apellido;
+
+            console.log(saludo);
+
+            //interpolación Template String
+
+            saludo2=`hola mi nombre es ${nombre2} apellido ${apellido2}`;
+
+            console.log(saludo2);
+
+            let a = 2;
+            let b = new Number(3); 
+            let c =5.67;
+            let d = "3.1416";
+
+            console.log(a,b,c.toFixed(1));
+            //el metodo toFixed me permite redondear un numero decimal y recibe como parametro 
+            // la cantidad de unidades decimales despues de la coma que deseo
+
+            console.log(parseInt(c));  //parseInt devuelve la parte entera en este caso de 5.67 lo redondea 
+
+            console.log(typeof c, typeof d);
+
+            console.log(parseInt(d));
+            console.log(d);
+            console.log(c+parseInt(d));
+
+            //booleanos
+
+            console.log(Boolean(0));
+            console.log(Boolean(-7));
+            console.log(Boolean(""));
+            console.log(Boolean({}));
+            console.log(Boolean([]));
+
+            // null undefine NaN
+
+            let indefinido; //variable que no ha sido asignado el valor
+            let nulo = null; // variable que se asigno el valor pero es nulo
+
+            console.log(indefinido, nulo);
+
+
+        </script>
+    </body>
+
+
+</html>

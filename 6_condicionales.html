@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+
+    </head>
+
+
+    <body>
+        <h1>Fundamentos de JavaScript</h1>
+        <script>
+            // Estructuras de control y 
+            
+            // if else
+
+            let edad= 19;
+
+            if (edad >=18){
+
+                console.log("eres mayor de edad")
+            }else {
+                console.log("esres menor de edad")
+            }
+
+            if (!edad >=18){
+
+                console.log("eres mayor de edad (estamos usando la negación)")
+            }else {
+                console.log("esres menor de edad (estamos usando la negación)")
+            }
+
+            let hora =20;
+
+            if (hora>=0 && hora<=5){
+
+                console.log("dejame dormir")
+             } else if(hora>=6 && hora<=11){
+                    console.log("buenos días");
+                }else if(hora>=12 && hora<=18){
+                    console.log("buenas tardes");
+                }else console.log("buenas noches")
+                
+            // simpleificación if else
+            // operador ternario (condición) ?
+
+           let mayorEdad =(edad >=18)
+           ?"eres mayor de edad"
+           :"eres menor de edad"
+           console.log(mayorEdad)
+
+
+            // switch -case
+
+            let dia=5;
+
+            switch (dia) {
+                case 0:
+                    console.log("Domingo")
+                    break;
+                    case 1:
+                    console.log("Lunes")
+                    break;
+                    case 2:
+                    console.log("Martes")
+                    break;
+                    case 3:
+                    console.log("Miercoles")
+                    break;
+                    case 4:
+                    console.log("Jueves")
+                    break;
+                    case 5:
+                    console.log("Viernes")
+                    break;
+                    case 6:
+                    console.log("Sabado")
+                    break;
+            
+                default:
+                    console.log("este dia no esta contemplado")
+                    break;
+            }
+            
+            
+
+        </script>
+    </body>
+
+
+</html>

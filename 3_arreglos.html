@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+
+    </head>
+
+
+    <body>
+        <h1>Fundamentos de JavaScript</h1>
+        <script>
+            //arreglos o array 
+
+            const a = ["Andres",2,3,"josue",true,false];
+            const b = ["Andres",2,3,"josue",[2,4,6,8,10]];
+            console.log(a, `la cantidad de elementos de a es ${a.length}` );
+            console.log(a[0]);
+            console.log(b[4][4]);
+
+
+            const colores = ["Blanco","Verde","Azul","Naranja"];
+
+            colores.forEach(function(el,index){
+
+                console.log(`<li id="${index}">${el}</li> `);
+            })
+        </script>
+    </body>
+
+
+</html>

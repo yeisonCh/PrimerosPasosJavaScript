@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+
+    </head>
+
+
+    <body>
+        <h1>Fundamentos de JavaScript</h1>
+        <script>
+            //Funciones declarada
+
+            function estoEsUnFuncion(){
+                console.log("uno");
+                
+
+            }
+
+            // llamar una funión 
+
+            estoEsUnFuncion()
+
+            //función que devuelve un valor, solo puede contener un return
+
+            function devuelveValor (){
+
+
+                return "esta función devuelve una cadena de texto"
+            }
+            console.log(devuelveValor());
+
+            //función con parametros
+
+            function sumar(num1, num2){
+
+                suma=num1+num2;
+                return suma;
+            }
+
+            console.log(sumar(2,4));
+
+            function saludo(nombre, edad){
+
+                console.log(`hola mi nombre es ${nombre} y tengo ${edad} años`);
+            }
+
+            saludo("Josue",10)
+            saludo();
+
+            //función expresada
+            /*
+            no podemos llamar una función expresada 
+            antes de declararlas 
+            
+            */
+
+            const funcionExpresada = function(){
+
+                console.log ("esta es una función expresada, la cual se ha asignado a una variable")
+            }
+
+          funcionExpresada();
+
+        </script>
+    </body>
+
+
+</html>
