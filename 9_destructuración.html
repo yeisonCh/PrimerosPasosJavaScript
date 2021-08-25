@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentos JavaScript</title>
+
+    </head>
+
+
+    <body>
+        <h1>Fundamentos de JavaScript</h1>
+        <script>
+            // destructuración
+            
+            // Sin destructuración
+            const numero=[1,2,3];
+            let uno=numero[0],
+                dos=numero[1]
+                tres=numero[2];
+
+                console.log(uno,dos,tres);
+
+                //con destructuración
+            const[one,two,three]=numero;
+            console.log(one,two,three);
+            
+            let persona ={
+                nombre:"Juan",
+                apellido:"Peres",
+                edad:32
+            }
+            let{nombre,apellido,edad}=persona;
+            console.log(nombre,apellido,edad);
+
+            // Objetos literales
+
+            let nombre2= "Lucas",
+            edad2=7;
+
+            const perro={
+
+                nombre:nombre2,
+                edad:edad2,
+                ladrar:function(){
+                    console.log("guauu guauuuu!!!00")
+                }
+            }
+
+            console.log(perro.nombre)
+            perro.ladrar()
+
+            const dog ={
+                nombre2,
+                edad2,
+                raza:"callejero",
+                ladrar(){
+                    console.log("guauu guauuuu guauuuu!!")
+                }
+            }
+
+            console.log(dog)
+            dog.ladrar()
+
+            
+        </script>
+    </body>
+
+
+</html>
