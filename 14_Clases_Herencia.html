@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   /* Clases
+   las clases no resiven paramtros 
+   se hace un contructor pararesivir parametros y crear atributos
+   Herencia
+   
+   */
+
+   // clases 
+
+   class Animal{
+       constructor(nombre, genero){
+        //Atributos
+        this.nombre=nombre;
+        this.genero=genero;
+
+
+       }
+       
+       //metodos 
+       //pueden resivir parametros o no 
+
+       sonar(){
+           console.log("HAgo sonidos porque estoy vivo")
+       }
+
+       saludar(nombre){
+           console.log(`Hola me llamo ${this.nombre}`)
+       }
+    
+   }
+
+   class Perro extends Animal{
+    constructor(nombre, genero, tamanio){
+//El metodo super() llama al constructor de la clase Animal
+    super(nombre,genero);
+    this.tamanio=tamanio;
+    }
+
+    //sobre escribiendo el metodo sonar de la clase padre 
+    sonar(){
+        console.log("soy un perro y mi sonido es ladrar");
+    }
+
+    ladrar(){
+        console.log("Guauuu, guauuu");
+    }
+
+
+   }
+
+   const mimi = new Animal ("MImi", "hembra"), 
+   scooby=new Perro("Escubi", "Macho", "gigante");
+
+   console.log(mimi);
+   console.log(scooby);
+   mimi.saludar(mimi.nombre);
+   scooby.saludar();
+   scooby.sonar();
+   scooby.ladrar();
+
+
+</script>
+
+</body>
+</html>

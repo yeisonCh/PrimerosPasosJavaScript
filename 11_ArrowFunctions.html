@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+    const saludar =()=>{
+        console.log("Hola a todos");
+    }
+	
+    const despedir=()=> console.log("Adios a todos");
+
+    // Ejemplo de función sin parentesis ni corchetes
+    const ejemplo=nombre=>console.log(`este es un ${nombre}`);
+
+    //Construcción normal de una función 
+    const sumar = function (a,b) {
+        return a+b;
+    }
+    // Nueva estructura de las funciones arrow funtions
+    const resta =(a,b) => a-b; 
+
+
+    const numeros=[1,2,3,4,5,6];
+
+    numeros.forEach((valor,indice)=> console.log(`${valor} esta en la posición ${indice}`))
+    
+    // PAra las funciones de varias lineas debo colocar los corchetes
+    // no se debe usar arrow funtions dentro de un objeto
+
+    const variasLineas=()=>{
+        console.log("uno");
+        console.log("dos");
+        console.log("tres");
+
+
+    }
+
+
+
+
+    saludar();
+    despedir();
+    console.log(sumar(5,6));
+    console.log(resta(5,6));
+	variasLineas();
+	
+	
+	
+	
+	
+</script>
+
+
+
+</body>
+</html>

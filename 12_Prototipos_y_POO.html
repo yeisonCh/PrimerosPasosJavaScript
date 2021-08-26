@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   /* POO
+   Clases: modelo a seguir
+   Objetos: Es una instancia de la clase 
+    Atributos => caracteristicas o propiedades de un onjeto
+    Metodos => son las acciones que un elemto puede hacer
+        (son funciones dentro de un objeto   
+   
+   */
+
+   const animal={
+    nombre:"Snoopy",
+    sonido(){
+        console.log("Guauuu, Guauuu!!!")
+    }
+   }
+
+   const animal2={
+    nombre:"Lola Bonny",
+    sonido(){
+        console.log("holaaa")
+    }
+   }
+
+   console.log(animal)
+   console.log(animal2)
+
+   // Prototipos 
+
+   //Función constructora
+   function Animal(nombre, genero){
+       //Atributos
+        this.nombre=nombre;
+        this.genero=genero;
+
+        // se usa el this para que haga parte del constructor
+        //Metodos
+        
+
+   }
+
+   // para asignar funciones o metodos a una clase o función constructor
+        Animal.prototype.sonar=function(){
+            console.log("holaaa, hago sonidos")
+        }
+
+        Animal.prototype.saludar=function(){
+            console.log("holaaa, desede la función saludar")
+        }
+
+
+
+   const snoopy = new Animal("Sno0py","Macho"),
+   lolaBonny= new Animal("Lola buuny", "Hembra ")
+
+   console.log(snoopy)
+   console.log(lolaBonny)
+
+</script>
+
+</body>
+</html>

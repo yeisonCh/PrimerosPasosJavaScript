@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   /* POO
+   Herencia
+   
+   */
+
+   // Prototipos 
+
+   //Función constructora
+   function Animal(nombre, genero){
+       //Atributos
+        this.nombre=nombre;
+        this.genero=genero;
+
+        // se usa el this para que haga parte del constructor
+        //Metodos
+    
+
+   }
+
+   //Prototipo perro
+
+   function Perro(nombre,genero,tamanio){
+       /* Para heredar los atributos y los metodos de la clase 
+       o prototipo Animal Usamos una varibale y la igualamos 
+       al prototipo deseado*/
+        this.super=Animal  
+        this.super(nombre,genero);
+        this.tamanio=tamanio;
+
+   }
+
+   // Perro esta heredando del prototipo Animal
+   Perro.prototype=new Animal();
+   Perro.prototype.constructor=Perro;
+
+   // Sobre escribir un metodo
+   Perro.prototype.saludar=function(){
+       console.log("Soy un perro y mi sonido es ladrar")
+   }
+
+   Perro.prototype.ladrar=function(){
+       console.log("Guauuu, guauuu")
+   }
+
+
+   // para asignar funciones o metodos a una clase o función constructor
+        Animal.prototype.sonar=function(){
+            console.log("holaaa, hago sonidos")
+        }
+
+        Animal.prototype.saludar=function(){
+            console.log("holaaa, desede la función saludar")
+        }
+
+
+
+   const snoopy = new Perro("Snoopy","Macho", "mediano"),
+   lolaBonny= new Animal("Lola buuny", "Hembra ")
+
+   console.log(snoopy)
+   console.log(lolaBonny)
+   snoopy.sonar()
+   snoopy.saludar()
+   snoopy.ladrar()
+
+</script>
+
+</body>
+</html>

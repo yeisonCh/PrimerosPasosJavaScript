@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   /* Metodos estaticos
+   
+   */
+
+   // clases 
+
+   class Animal{
+       constructor(nombre, genero){
+        //Atributos
+        this.nombre=nombre;
+        this.genero=genero;
+
+
+       }
+       
+       //metodos 
+       //pueden resivir parametros o no 
+
+       sonar(){
+           console.log("HAgo sonidos porque estoy vivo")
+       }
+
+       saludar(nombre){
+           console.log(`Hola me llamo ${this.nombre}`)
+       }
+
+       
+    
+   }
+
+   
+
+   
+
+   class Perro extends Animal{
+    constructor(nombre, genero, tamanio){
+//El metodo super() llama al constructor de la clase Animal
+    super(nombre,genero);
+    this.tamanio=tamanio;
+    this.raza=null;
+    }
+
+    //sobre escribiendo el metodo sonar de la clase padre 
+    sonar(){
+        console.log("soy un perro y mi sonido es ladrar");
+    }
+
+    ladrar(){
+        console.log("Guauuu, guauuu");
+    }
+   
+    static queEres(){
+           console.log("dcnkjñndskjnckjsdnkjcnjnjndsnckjdnjnndjncjkndsjknckj")
+       }
+
+    set setRaza(raza){
+        this.raza=raza;
+    }
+
+    get getRaza(){
+        return this.raza;
+    }
+
+   }
+
+//uso del metodo estatico, lopodemos hacer sin necesidad de instanciar la clase
+    Perro.queEres();
+
+
+    
+   const mimi = new Animal ("MImi", "hembra"), 
+   scooby=new Perro("Escubi", "Macho", "gigante");
+
+   console.log(mimi);
+   console.log(scooby);
+   mimi.saludar(mimi.nombre);
+   scooby.saludar();
+   scooby.sonar();
+   scooby.ladrar();
+
+   //como se llaman las funciones set y get
+   //JavaScript convierte estos metos en propiedades 
+   //por eso no se usan
+
+   scooby.setRaza="Gran Danés";
+
+   console.log(scooby.getRaza);
+
+
+</script>
+
+</body>
+</html>
