@@ -9,58 +9,14 @@
 
 
 <script>
-   /* Operador corto circuito
+   let cadena= "Lorem ipsum dolor sit amet consectetur adipiscing elit auctor conubia, commodo urna phasellus accumsan tristique donec facilisis aptent morbi magnis, sollicitudin libero nulla orci nam in neque laoreet. Scelerisque blandit quisque nostra class risus vel volutpat tempor netus, quis himenaeos accumsan ornare laoreet praesent ac. Interdum duis viverra orci bibendum blandit nisl erat nunc sapien cubilia varius, dui et massa ut conubia tristique condimentum urna nullam."
 
-   con OR => cuando el valor de la izquierda en el operador siempre
-   puede validar a true es el valor que se carga por defecto
-   o ignora lo que esta al lado derecho
-   
-   */
-   
-    
-   function saludar (nombre){
-      nombre=nombre || "Desconocido"
-      console.log(`Hola ${nombre}`)
-   }
-
-   saludar("Andres");
-   saludar();
-
-   //los valores de la izquierda tienden a verdadero
-   console.log("Cadena "||"Cadena de texto")
-   console.log(19||"Cadena de texto")
-   console.log(true||"Cadena de texto")
-   console.log([]||"Cadena de texto")
-   console.log({}||"Cadena de texto")
-
-
-   /* Operador corto circuito
-
-   con AND => cuando el valor de la izquierda en el operador siempre
-   puede validar a False es el valor que se carga por defecto
-   
-   
-   */
-
-   function saludar (nombre){
-      nombre=nombre && "Desconocido"
-      console.log(`Hola ${nombre}`)
-   }
-
-   saludar("Andres");
-   saludar();
-
-   //los valores de la izquierda tienden a verdadero
-   console.log("Cadena "&&"Cadena de texto")
-   console.log(19&&"Cadena de texto")
-   console.log(true&&"Cadena de texto")
-   console.log([]&&"Cadena de texto")
-   console.log({}&&"Cadena de texto")
-
-
-  
-
-
+   let expReg=new RegExp("Lorem","")//i para discriminar mayusculas y minusculas
+   //g para que analice toda la cadena de texto
+   let expReg2=/Lorem{3}/ig;
+   console.log(expReg.test(cadena))
+   console.log(expReg2.test(cadena))
+   console.log(expReg.exec(cadena))
 </script>
 
 </body>
