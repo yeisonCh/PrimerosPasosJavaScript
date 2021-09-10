@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función de cuenta el numero de caracteres de una cadena 
+
+   //Función declarada 
+   //función de contar cadenas resive un parametro si no que asigne una cadena vacia 
+   function contarCadena(cadena =""){
+      if(!cadena){
+         console.warn("No ingresaste ninguna texto");
+      }else {
+         console.info(`la cadena "${cadena}" tiene ${cadena.length} caracteres `);
+      }
+   }
+
+   contarCadena();
+   contarCadena("Hola mundo");
+
+   // función expresada uso de operador ternario 
+
+   const contarTexto = (cadena="")=> 
+   (!cadena)?
+      console.warn("No ingresaste ninguna texto")
+      :console.info(`la cadena "${cadena}" tiene ${cadena.length} caracteres `);
+
+   contarTexto();
+   contarTexto("Hola mundo")
+
+
+   //2. función que devuelva el texto recortado, segun la cantidad que deseamos
+
+   const recortarTexto =(cadena="",longitud=undefined)=>
+      (!cadena)
+         ?console.warn("No ingresaste ninguna texto")
+         :(longitud===undefined) //otro operador ternario
+         ?console.warn("No ingresaste la longuitud para recortar el texto")
+         :console.info(cadena.slice(0,longitud));
+
+   recortarTexto("Hola mundo ",)
+   recortarTexto("Andres")
+
+
+   //3. Función que tome un texto y nos devuelva un array separado por determinado caracter
+
+   const cadenaAArreglo =(cadena="", separador=undefined)=>
+   (!cadena)
+         ?console.warn("No ingresaste ninguna texto")
+         :(separador===undefined) //otro operador ternario
+         ?console.warn("No ingresaste el caracter separador")
+         :console.info(cadena.split(separador));
+
+   cadenaAArreglo("Hola mundo estamos aprendiendo", " ")
+   cadenaAArreglo("Hola,mundo,estamos,aprendiendo", " ")
+
+
+   //Función que repita x veces un texto 
+
+   const repetirTexto=(cadena="", repetir=undefined) => {
+      
+    
+
+      if (!cadena)return console.warn("No ingresaste un texto :( ")
+      if (repetir ===undefined)return console.warn("No ingresaste el numero de veces a repetir el texto  :( ");
+      if (repetir ===0)return console.error("No ingresaste el numero de veces a repetir el texto  :( ");
+      if (repetir ===undefined)return console.warn("No ingresaste el numero de veces a repetir el texto  :( ")
+      if (Math.sign(repetir)===-1)return console.error("el numero de veces no puede ser negativo. ")
+      
+
+      
+      for(let i=1;i<=repetir; i++)console.log(`${cadena}, ${i}`)
+      
+      
+      
+   }
+   
+
+   repetirTexto("Hola a todos",3)
+   repetirTexto("Hola a todos",0)
+   repetirTexto("Hola a todos",-2)
+  
+   
+</script>
+
+</body>
+</html>

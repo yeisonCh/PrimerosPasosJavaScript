@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función que invierte una cadena
+
+   const invertirCadena =(cadena ="") =>
+      (!cadena)
+         ?console.warn("No ingresate ninguna cadena")
+         :console.info(cadena.split("").reverse().join(""))
+   
+   invertirCadena();
+
+   invertirCadena("Hola mundo")
+
+   //función para contar una palabra en un texto largo
+
+   const contarRepetido =(cadena="", texto="")=>{
+      if (!cadena) return console.warn("no ingresaste un texo");
+
+      if (!texto) return console.warn("No ingresate texto a buscar");
+
+      let i=0, contador=0;
+      while (i !== -1) {
+         i=cadena.indexOf(texto,i);
+            if(i!==-1){
+               i++;
+               contador++;
+            }
+      }
+
+      return console.info(`La apalabra ${texto}, se repite ${contador} veces`)
+   }
+
+
+   contarRepetido();
+   contarRepetido("hola a todos, hola amigos, hola joel, hola josue", )
+
+   contarRepetido("hola a todos, hola amigos, hola joel, hola josue", "hola")
+
+
+   //función que determine si una palabra se ecribe igual al derecho o al reves 
+
+   const palindromo=(palabra="")=> {
+      if(!palabra) return conole.warn("No ingresaste palabra o frase")
+
+      palabra= palabra.toLowerCase();//toLOwerCase la pasamos todo a minusculas
+
+      //metodo split para convertir un texto en un array
+      //reverse para invertir el array 
+      //join para unir el array que invertimos secibe como parametro un separador si lo deseamos en este caso no
+      let alReves= palabra.split("").reverse().join("");
+      
+      return (alReves===palabra)
+         ?console.info(`Si es palindromo, la palabra original ${palabra }, la palabra al reves es ${alReves}`)
+         :console.info(`NO es palindromo, la palabra original ${palabra }, la palabra al reves es ${alReves}`);
+
+   }
+
+   palindromo("perro");
+   palindromo("ala");
+
+
+   //función que elimine determinado paron o texto
+
+   const eliminarCaracter = (texto="", patron="")=>
+    (!texto)
+      ?console.warn("No ingresaste un texto")
+      :(!patron)
+         ?console.warn("No ingresaste un patron de caracteres")
+         //replace para remplazar primer parametro loas caracteres a encontrar o eliminar, segundo parametro con lo que queremos remplazar
+         :console.info(texto.replace(new RegExp(patron, "ig"), ""));
+
+   eliminarCaracter();
+
+   eliminarCaracter("hola mundo")
+
+   eliminarCaracter("xyz1, xyz2, xyz3, xyz4 ","xy")
+
+   
+</script>
+
+</body>
+</html>

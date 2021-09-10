@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función que invierte una cadena
+
+   const aleatorio = ()=>console.info(Math.round((Math.random())*100)+500)
+
+   aleatorio();
+
+   // función para invertir un numero y decir si es igual 
+   const capicua=(numero=0)=>{
+      if(!numero) return console.warn("No ingresaste un número")
+
+      if(typeof numero !=="number") return console.error(`el valor ${numero} NO es un número`)
+
+      numero = numero.toString();
+      let alReves = numero.split("").reverse().join("");
+
+      return (numero===alReves)
+      ?console.info(`Si es capicua, Número original ${numero}, número al reves ${alReves}`)
+      :console.info(`No es capicua, Número original ${numero}, número al reves ${alReves}`)
+
+   }
+
+   capicua(58)
+   capicua("58")
+   capicua({})
+
+   //función para dar el numero factorial 
+
+   const factorial=(numero=undefined)=>{
+
+      if(!numero) return console.warn("No ingresaste un número")
+
+      if(typeof numero !=="number") return console.error(`el valor ${numero} NO es un número`)
+
+      if(numero === 0) return console.error(`el numero no puede ser cero`)
+
+      if(Math.sign(numero===-1))return console.error(`el número no puede ser negativo`)
+
+      let factorial =1;
+      for (let i=numero;i>1; i--){
+         // factorial = factorial*i;
+         factorial *=i;
+      }
+
+      return console.info(`el factorial de ${numero}, es ${factorial}`)
+   }
+
+   factorial("d")
+   factorial()
+   factorial([])
+   factorial(5)
+   factorial(-5)
+
+</script>
+
+</body>
+</html>

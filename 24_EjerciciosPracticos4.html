@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función para determinar el número primo
+
+   const nPrimo=(numero=undefined)=>{
+
+if(!numero) return console.warn("No ingresaste un número")
+
+if(typeof numero !=="number") return console.error(`el valor ${numero} NO es un número`)
+
+if(numero === 1) return console.error(`el numero no puede ser cero`)
+
+if(Math.sign(numero===-1))return console.error(`el número no puede ser negativo`)
+
+let divisible =false;
+for (let i=2;i<numero; i++){
+   
+   if((numero%i)===0){
+      divisible=true;
+      break;
+   }
+}
+
+return (divisible)
+   ?console.log(`el número ${numero}, No es primo `)
+   :console.log(`el número ${numero}, Si es primo `)
+}
+
+nPrimo(5)
+nPrimo("21")
+
+//funcion par o impar
+
+const nPar=(numero=undefined)=>{
+
+if(numero===undefined) return console.warn("No ingresaste un número")
+
+if(typeof numero !=="number") return console.error(`el valor ${numero} NO es un número`)
+
+
+return ((numero%2)===0)
+   ?console.log(`el número ${numero}, es Par `)
+   :console.log(`el número ${numero}, No es par `)
+}
+
+nPar(2)
+nPar("h")
+
+//funcion para pasa de celsius a fahrenhei
+
+const convertirGrados=(grados=undefined,unidad=undefined)=>{
+
+   if(grados===undefined) return console.warn("No ingresaste un número")
+
+   if(typeof grados !=="number") return console.error(`el valor ${grados} NO es un número`)
+
+   if(unidad===undefined) return console.warn("No ingresaste un número")
+
+   if(typeof unidad !=="string") return console.error(`el valor ${unidad} NO es un caracter C ó F`)
+   //usamos la expresión regular !/(C|F)/ si no es C o F 
+   if(unidad.length!==1 || !/(C|F)/.test(unidad))return console.warn("Valor de unidad no reconocida")
+
+   if(unidad==="C"){
+      return console.info(`${grados}°C = ${Math.round((grados*(9/5)+32))}°F`)
+   }else if(unidad==="F"){
+      return console.info(`${grados}°F = ${Math.round((grados-32)*(5/9))}°C`)
+   }
+
+}
+
+convertirGrados(2,"G")
+convertirGrados(2,"C")
+convertirGrados(100,"F")
+   
+</script>
+
+</body>
+</html>

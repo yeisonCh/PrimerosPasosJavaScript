@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función para convertir numeros de base binaria a decimal
+
+   const binarioAFDecimal =(numero=undefined, base=undefined)=>{
+      if(!numero) return console.warn("No ingresaste un número")
+
+      if(typeof numero !=="number") return console.error(`el valor ${numero} NO es un número`)
+
+      if(!base) return console.warn("No ingresaste la base a convertir")
+
+      if(typeof base !=="number") return console.error(`el valor ${base} NO es un número`)
+
+      if(base===2){
+
+         return console.info(`El numero ${numero} base ${base} = ${parseInt(numero,base)} base 10`)
+      }else if(base ===10){
+
+         //para pasarlo a binario
+      return console.info(`El numero ${numero} base ${base} = ${(numero.toString(2))} base 10`)
+      }else{
+
+         return console.error(`el valor ${base} correspondiente a la base, No es valido`)
+      }
+      
+
+   }
+
+   // binarioAFDecimal()
+   // binarioAFDecimal("45")
+   // binarioAFDecimal(100,2)
+   // binarioAFDecimal(4,10)
+
+
+
+// función que debuelva el monto final despues de aplicar un descuento 
+
+const aplicarDescuento=(monto=undefined, descuento=0)=>{
+
+   if (monto===undefined) return console.warn("No ingresaste el monto")
+
+   if(typeof monto !=="number") return console.error(`el valor ${monto} NO es un número`)
+
+   if (monto===0) return console.warn(`el valor ${monto} NO puede ser cero`)
+
+   // con el metodo sign de la clase Math evaluamos si un numero es negativo.
+   //nos devuelve tres valores posibles -1 si es negativo 1 si es positivo 
+   // y 0 y el valor ingresado es cero
+   if(Math.sign(monto)===-1)return console.warn(`el valor ${monto} NO puede ser un valor negativo`)
+
+   if(typeof descuento !=="number") return console.error(`el valor ${descuento} NO es un número`)
+
+   if(Math.sign(descuento)===-1)return console.warn(`el valor ${descuento} NO puede ser un valor negativo`)
+
+   return console.info(`$${monto}- ${descuento}% = $${monto -((monto*descuento)/100)}`)
+
+}
+
+aplicarDescuento("1000")
+aplicarDescuento(5100,5)
+
+
+//función que dada una fecha valida calcule la cantidad de dias que ha pasado hasta el día de hoy
+
+const calcularAnios=(fecha=undefined)=>{
+
+   if (fecha===undefined) return console.warn("Nno ingresaste una fecha ")
+
+   // instanceOf => es una instancia del objeto Date
+   if(!(fecha instanceof Date)) return console.error(`el valor ${fecha} NO es un fecha valida`)
+
+   let hoyMenosFecha = new Date().getTime()-fecha.getTime(),
+   // un milisegundo por 60 para minutos, por 60 para horas, por 24 para dias y 365 para años
+   aniosEnMs=1000*60*60*24*365,
+   aniosHumanos=Math.floor(hoyMenosFecha/aniosEnMs);
+console.log (hoyMenosFecha)
+
+   return (Math.sign(aniosHumanos)===-1)
+      //Math.abs nos devuelve el valor en número positivo o valor absoluto
+      ?console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()} `)
+      :(Math.sign(aniosHumanos)===1) 
+       ?console.info(`Han pasado ${aniosHumanos} años, desde  ${fecha.getFullYear()}`)
+       :console.info(`Estamos en el año actual ${fecha.getFullYear()}`)
+}
+
+
+calcularAnios()
+calcularAnios({})
+calcularAnios(new Date())
+calcularAnios(new Date(1983,4,23))
+calcularAnios(new Date(2084,4,23))
+   
+   
+</script>
+
+</body>
+</html>
