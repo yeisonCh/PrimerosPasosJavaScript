@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función que cuente el numero de vocales y consonantes de una cadena dada
+
+   const contarLetras=(cadena ="")=>{
+      if (!cadena) return console.warn("No ingresaste una cadena e texto");
+
+      if (typeof cadena !== "string") return console.error(`El valor ${cadena} no es un texto valido`);
+
+      let vocales=0, consonantes=0;
+      cadena=cadena.toLocaleLowerCase();//para pasar toda la cadena a minusculas 
+
+      
+      
+      for(let letra of cadena){
+         // si la letra cumple con cualquiera de las letras que emos colocado en este caso las vocales 
+         if (/[aeiouáéíóúü]/.test(letra))vocales++;
+
+         if(/[bcdfghijklmnñpqrstvwxyz]/.test(letra))consonantes++;
+      }
+
+      
+      
+
+
+      return console.info({
+         cadena:cadena,
+         vocales:vocales,
+         consonantes:consonantes
+
+
+      })
+
+   }
+
+   contarLetras();
+   contarLetras(3);
+   contarLetras("Hola");
+
+   // Función que valide un texto a un nombre valido 
+
+   const validarNombre =(nombre="")=>{
+
+      if (!nombre) return console.warn("No ingresaste una cadena de texto");
+
+      if (typeof nombre !== "string") return console.error(`El valor ${nombre} no es un texto valido`);
+
+      //^ indica que no puede haber antes y $ no puede haber despues sierto caracter  \s para admitir espacios en blanco
+      let expresionReg=/^[A_Za-zÑñáéíóúüÁÉÍÓÚÜ\s]+$/g.test(nombre);
+
+      return (expresionReg)
+         ?console.info(`El nombre ${nombre}, es valido`)
+         :console.warn(`El nombre ${nombre}, no es valido`)
+
+
+   }
+   
+   validarNombre();
+   validarNombre("Andres3")
+   validarNombre("Andres chaparro")
+
+   //Función para validar un correo valido 
+
+   const validarCorreo =(correo="")=>{
+
+if (!correo) return console.warn("No ingresaste una cadena de texto");
+
+if (typeof correo !== "string") return console.error(`El valor ${correo} no es un texto valido`);
+
+//^ indica que no puede haber antes y $ no puede haber despues sierto caracter  \s para admitir espacios en blanco
+let expresionReg=/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(correo);
+
+return (expresionReg)
+   ?console.info(`El email ${correo}, es valido`)
+   :console.warn(`El email ${correo}, no es valido`)
+
+
+}
+   validarCorreo();
+   validarCorreo(3);
+   validarCorreo("yeison.andres.chaparro@outlook.com")
+   
+</script>
+
+</body>
+</html>

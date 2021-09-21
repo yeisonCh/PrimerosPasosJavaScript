@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función para ordenar un arreglo deforma acendente y otro decendente
+
+   const ordena=(arr = undefined)=>{
+      if (arr===undefined) return console.warn("No ingresaste un arreglo de números");
+
+      //comprovar que lo que nos ingreso el usuario sea un arreglo
+      if(!(arr instanceof Array)) return console.error("El valor ingresado no es un arreglo");
+
+      //nos verifica que el arrego no este vacio
+      if (arr.length===0) return console.error("El arreglo esta vacio");
+
+         //verificar que todos los elelmentos del array sean de tipo número.
+      for (const iterator of arr) {
+
+         if(typeof iterator !== "number") return console.error(`El valor ${iterator} no es un número`);
+                 
+      }
+
+      return console.info({
+         arr,
+         asc:arr.map(elemto=>elemto).sort(),//el metodo sort nos ordena una array de números
+         desc:arr.map(elemto=>elemto).sort().reverse()
+         //metodo reverse invierte el orden del un arreglo
+  
+      })
+      
+
+   }
+
+   ordena();
+   ordena([12,2,2,4,5,6,5,4,8,7,47,89])
+
+   
+   // Función que reciba un arreglo y elimine los elemetos duplicados 
+
+   const eliminaDuplicados=(arr = undefined)=>{
+      if (arr===undefined) return console.warn("No ingresaste un arreglo de números");
+
+      if(!(arr instanceof Array)) return console.error("El valor ingresado no es un arreglo");
+
+      if (arr.length===0) return console.error("El arreglo esta vacio");
+
+      if (arr.length===1) return console.error("El arreglo debe tener más de un elemento");
+
+      /*return console.info({
+         original:arr,
+         //self se refiere al array en este caso a arr
+         sinDuplicados: arr.filter((value,index,self)=>self.indexOf(value)===index)
+  
+      })*/
+      
+      return console.info({
+         original:arr,
+         sinDuplicados:[...new Set(arr)]  //el emetodo Set crea un arreglo pero sin duplicados
+  
+      })
+
+   }
+
+  
+   eliminaDuplicados();
+   eliminaDuplicados({});
+   eliminaDuplicados([]);
+   eliminaDuplicados([12,2,2,4,5,6,5,4,8,7,47,89]);
+   eliminaDuplicados([12,2,2,true,5,true,5,4,"Andres",7,"Andres",89])
+
+
+   //Función que reciba un arreglo de números y obtenga el promedio 
+
+   const promedio=(arr=undefined)=>{
+
+      if (arr===undefined) return console.warn("No ingresaste un arreglo de números");
+
+      if(!(arr instanceof Array)) return console.error("El valor ingresado no es un arreglo");
+
+      if (arr.length===0) return console.error("El arreglo esta vacio");
+
+      for (const iterator of arr) {
+
+         if(typeof iterator !== "number") return console.error(`El valor ${iterator} no es un número`);
+                 
+      }
+
+      /*
+         variable total => para guardar un resultado 
+         num=> para recorrer el arreglo num es el número que estamos evaluando
+         index=> es la posición del número que estamos evaluando
+         arr=> es el arreglo que vamos a evaluar        
+         */
+      return console.info(
+           arr.reduce((total,num,index,arr)=>{
+            total+=num;
+            if(index===arr.length-1){
+               return `el promedio de ${arr.join(" + ")} es ${total / arr.length}`
+            }else{
+               return total
+            }
+
+         })
+      )
+      
+   }
+
+   promedio();
+   promedio({});
+   promedio([]);
+   promedio(["Andres",1, true]);
+   promedio([1,2,5,6,4,8,5,9,6]);
+   
+</script>
+
+</body>
+</html>

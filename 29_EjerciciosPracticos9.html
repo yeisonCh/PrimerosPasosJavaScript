@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Clase llamada pelicula
+    /*
+   generos: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary
+   Drama,Family, Fantasy,Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western*/
+
+   class Pelicula{
+      constructor({id,titulo,director,estreno,pais,generos,calificacion}){
+         this.id=id;
+         this.titulo=titulo;
+         this.director=director;
+         this.estreno=estreno;
+         this.pais=pais;
+         this.generos=generos;
+         this.calificacion=calificacion;  
+         this.validarIMDB(id);  
+         this.validarDirector(director);
+         this.validarTitulo(titulo); 
+         this.validarEstreno(estreno);
+         this.validarPais(pais);  
+         this.validarGeneros(generos);
+         this.validarCalificacion(calificacion);
+         
+      }
+
+      //atributo estatico para ver los generos disponibles 
+
+      static get ListaGeneros(){
+         return["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary",  "Drama","Family", "Fantasy","FilmNoir", "Game-Show", "History", "Horror", "Musical", "Music"," Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"]
+      }
+
+      //metodo estatico
+
+      static generosAceptados(){
+         return console.info(`Los generos son ${Pelicula.ListaGeneros.join(", ")}`)
+      }
+
+      //Función Validar cadenas 
+      validarCadena(propiedad,valor){
+         if(!valor)return console.warn(`${propiedad} "${valor}" esta vacio`)
+
+         if (typeof valor !=="string") return console.error(`${propiedad} "${valor}" no es un texto`)
+
+         return true;
+      }
+
+      validarLongitudCadena(propiedad,valor,longitud){
+         if(valor.length>longitud) return console.error(`${propiedad} "${valor}", exede el número de caracteres permitidos(${longitud})`);
+
+         return true;
+
+      }
+
+      validarNumero(propiedad,valor){
+         if(!valor)return console.warn(`${propiedad} "${valor}" esta vacio`);
+         if (typeof valor !=="number") return console.error(`${propiedad} "${valor}" ingresado, No es un número`)
+
+         return true;
+         
+      }
+
+      validarArreglo(propiedad,valor){
+         if (valor===undefined) return console.warn(`${propiedad} "${valor}" esta vacio`);
+
+         if(!(valor instanceof Array)) return console.error("El valor ingresado no es un arreglo");
+         if (valor.length===0) return console.error("El arreglo esta vacio");
+
+         for (const iterator of valor) {
+
+         if(typeof iterator !== "string") return console.error(`El valor ${iterator} no es un texto`);
+                 
+      }
+
+      return true;
+      }
+
+/*---------------------------------------------------------------------------*/
+      // //validaciones 
+      // // 9 caracteres, 2 letras y 7 números
+      validarIMDB(id){
+         if(this.validarCadena("IMDB id",id)) 
+            if(!(/^([a-z]){2}([0-9]){7}$/.test(id)))
+               return console.error(`el IMDB id "${id}" no es valido, debe tener 2 letras y 7 números`)
+            
+      }
+
+      validarTitulo(titulo){
+         if(this.validarCadena("Titúlo",titulo)) 
+            this.validarLongitudCadena("titulo", titulo, 100)
+            
+      }
+
+      validarDirector(director){
+         if(this.validarCadena("Director",director)) 
+            this.validarLongitudCadena("Director", director, 50)
+            
+      }
+
+
+      validarEstreno(estreno){
+         if(this.validarNumero("Año de estreno",estreno)) 
+            if(!(/^([0-9]){4}$/.test(estreno)))
+               return console.error(`el Año de estremo "${estreno}" no es valido, debe ser un número de cuatro digitos`)
+            
+      }
+      
+      validarPais(pais){
+         this.validarArreglo("País", pais)
+
+      }
+
+      validarGeneros(generos){
+         if(this.validarArreglo("Genero", generos)){
+            for (let genero of generos) {
+               //usamos un metodo que nos permite saber si un valor existe dentro de un arreglo
+               //llamamos a la clase 
+               // console.log(genero, Pelicula.ListaGeneros.includes(genero));
+
+               if(!Pelicula.ListaGeneros.includes(genero)){
+                  console.error(`Genero(s) incorrectos "${generos.join(", ")}"`);
+                  Pelicula.generosAceptados();
+               }
+            }
+         }
+
+      }
+
+      validarCalificacion(calificacion){
+         if(this.validarNumero("calificación",calificacion)) 
+            return(calificacion<0 || calificacion>10)
+               ?console.error(`La calificación debe ser entre 0 y 10`)
+               :this.calificacion=calificacion.toFixed(1)
+               //el metodo toFixed sirve para indicarle la cantidad de decimales que quiero
+      }
+
+      fichaTecnica(){
+         console.info(`Ficha tecnica:\n Titulo:${this.titulo} \n Director:${this.director}\n Año: ${this.estreno}\nPais:${this.pais.join("-")}\n Genero:${this.generos.join(", ")}\nCalificación: ${this.calificacion}\n IMDB id: ${this.id}`)
+      }
+
+
+  }
+
+// Pelicula.generosAceptados();
+
+const pel=new Pelicula({
+   id:"kk1234567",
+   titulo:"Titulo de la pelicula",
+   director:"Director de la pelicual",
+   estreno:2021,
+   pais:["Mexico"],
+   generos:["Comedy","War"],
+   calificacion:1.25
+
+});
+
+pel.fichaTecnica()
+console.log(pel.calificacion)
+
+const pelis=[
+   {
+   id:"kk1234567",
+   titulo:"Titulo de la pelicula",
+   director:"Director de la pelicual",
+   estreno:2021,
+   pais:["Mexico"],
+   generos:["Comedy","War"],
+   calificacion:3.5
+   },
+   {
+   id:"gh7654231",
+   titulo:"Otra Pelicula",
+   director:"un director cualquiera",
+   estreno:2001,
+   pais:["Mexico", "Peru"],
+   generos:["Comedy","War"],
+   calificacion:6.58
+   },
+   {
+   id:"op1023458",
+   titulo:"Tercer pelicula",
+   director:"directores",
+   estreno:1987,
+   pais:["Panama", "Costarrica"],
+   generos:["Comedy","War"],
+   calificacion:7.5
+   }
+
+]
+
+pelis.forEach(id=>new Pelicula(id).fichaTecnica());
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programación orientada a objetos</title>
+</head>
+
+<body>
+
+
+<script>
+   //Función que resive un array y devuelve otro array con los números elevados al cuadrado
+
+   //función expresada 
+
+   const devolcerCuadrados=(arr= undefined)=>{
+      
+      if (arr===undefined) return console.warn("No ingresaste un arreglo")
+
+      if(!(arr instanceof Array)) return console.error("El valor ingresado no es un arreglo")
+
+      if (arr.length===0) return console.error("El arreglo esta vacio")
+
+      for (const iterator of arr) {
+
+         if(typeof iterator !== "number") return console.error(`El valor ${iterator} no es un número`)
+                 
+      }
+
+      const newArr= arr.map(elemento=> elemento*elemento); 
+
+      return console.info(`el arreglo original es ${arr}, \n el arreglo elevado al cuadrado es ${newArr}`)
+   }
+
+   devolcerCuadrados([]);
+   // devolcerCuadrados();
+   // devolcerCuadrados({});
+   // devolcerCuadrados(["andres",1,"juan"])
+   // devolcerCuadrados([1,2,4,{}])
+   devolcerCuadrados([1,2,3,4])
+
+  // función que resiva un arreglo de números que nos devuelva el mayor y el menor 
+
+  const arrMayorMeno=(arr=undefined)=>{
+
+   if (arr===undefined) return console.warn("No ingresaste un arreglo")
+
+      //comprovar que lo que nos ingreso el usuario sea un arreglo
+      if(!(arr instanceof Array)) return console.error("El valor ingresado no es un arreglo")
+
+      //nos verifica que el arrego no este vacio
+      if (arr.length===0) return console.error("El arreglo esta vacio")
+
+         //verificar que todos los elelmentos del array sean de tipo número.
+      for (const iterator of arr) {
+
+         if(typeof iterator !== "number") return console.error(`El valor ${iterator} no es un número`)
+                 
+      }
+
+      return console.info(`El arreglo original es ${arr}\n el valor maximo del arreglo es ${Math.max(...arr)},\n el valor menor es ${Math.min(...arr)}`)
+}
+   
+arrMayorMeno({});
+arrMayorMeno([]);
+arrMayorMeno([1,2,3,4,5,6,7,8,9,10,14,15,12,18]);
+
+// Función que reciva un arreglo y me devuelva un objeto con dos arreglos uno de números pares y otro con los números impares.
+
+const separarParImpar=(arr=undefined)=>{
+
+   if (arr===undefined) return console.warn("No ingresaste un arreglo")
+
+   if(!(arr instanceof Array)) return console.error("El valor ingresado no es un arreglo")
+
+   if (arr.length===0) return console.error("El arreglo esta vacio")
+
+   for (const iterator of arr) {
+
+   if(typeof iterator !== "number") return console.error(`El valor ${iterator} no es un número`)
+           
+}
+
+   return console.info(
+   //creamos el objeto, y propiedad pares e impares  
+   {
+      pares:arr.filter(num=> num % 2 === 0),
+      impares:arr.filter(num=> num % 2 === 1)
+
+   })
+}
+
+separarParImpar();
+separarParImpar([]);
+separarParImpar([1,2,3,4,5,6,7,8,9,10,12,14,11,13,15,16,17]);
+
+</script>
+
+</body>
+</html>
