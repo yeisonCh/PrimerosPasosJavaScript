@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ascincrona</title>
+</head>
+
+<body>
+
+
+<script>
+//formas para trabajar la asincronia
+function cuadradoPromise(value,callback){
+
+   if(typeof value !== "number"){
+      return Promise.reject(`Error el valor ${value} ingresado, no es un número`)
+   }
+   return new Promise((resolve, reject)=>{
+      //los metodos resuleve y rechaza son metodos estaticos
+      setTimeout(()=>{
+      resolve({
+         value,
+         resultado:value*value
+
+      });
+   },0|Math.random()*1000);
+
+   });
+   
+}
+
+/*cuando tenemos una función que devuelve una promesa tenemos dos metodos
+then es el siguiente bloque que se ejecuta si la función se cumple o se resolve
+y un metodo catch que es el que captura el error*/
+cuadradoPromise(0)
+.then(obj=>{ //then recibe un objeto 
+   console.log("Inicio de la promesa o promise")
+   console.log(`la promesa o promise: ${obj.value}, ${obj.resultado}`);
+   return cuadradoPromise(1);
+})
+.then(obj=>{ //then recibe un objeto 
+   
+   console.log(`la promesa o promise: ${obj.value}, ${obj.resultado}`);
+   return cuadradoPromise(2);
+})
+.then(obj=>{ //then recibe un objeto 
+   
+   console.log(`la promesa o promise: ${obj.value}, ${obj.resultado}`);
+   return cuadradoPromise(3);
+})
+.then(obj=>{ //then recibe un objeto 
+   
+   console.log(`la promesa o promise: ${obj.value}, ${obj.resultado}`);
+   return cuadradoPromise(4);
+})
+.then(obj=>{ //then recibe un objeto 
+   console.log("Ingresamos 5 como cadena de texto")
+   console.log(`la promesa o promise: ${obj.value}, ${obj.resultado}`);
+   return cuadradoPromise("5");
+})
+
+.then(obj=>{ //then recibe un objeto 
+   
+   console.log(`la promesa o promise: ${obj.value}, ${obj.resultado}`);
+   
+})
+.catch(err => console.error(err));
+</script>
+
+</body>
+</html>
