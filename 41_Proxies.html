@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos WeakSet_WeakMaps</title>
+</head>
+
+<body>
+<h1>Tipo de dato map</h1>
+
+<script>
+
+//creamos un objeto literal 
+
+const persona={
+   nombre:"",
+   apellido:"",
+   edad:0
+}
+// creamos al manejador 
+
+const manejador={
+   //resive tres parametros, el objeto, las propiedades y el valor 
+   set(obj,prop,valor){
+      //validar para que no se ingrese ninguna otra propiedad aparte de las que hemos especificado
+//usamos el objeto Objec con la propiedad key o llave le pasamos como parametro el objeto en este caso obj
+//indexOf para buscar si existe dentro de prop (las propiedades) y el -1 nos indica que no existe esta propiedad
+      if (Object.keys(obj).indexOf(prop)===-1){
+         return console.error(`La propiedad "${prop}" no existe en el objeto persona`);
+      }
+//podemos validar el ingreso de caracteres para nombre y apellido 
+
+if(
+   (prop==="nombre"|| prop==="apellido")&& !(/^[A-Za-zÑñÁÉÍÓÚáéíóúÜü\s]+$/g.test(valor))
+
+){
+   return console.error(`La propiedad "${prop}" solo acepta letras y espacios en blanco`)
+}
+      obj[prop]=valor;
+   }
+}
+const jon=new Proxy(persona,manejador);
+
+jon.nombre="jhon";
+jon.apellido="Moreno";
+jon.edad=29;
+jon.twitter="@alguien";
+
+const joel=new Proxy(persona,manejador);
+joel.nombre="joel";
+joel.apellido="Chaparro";
+joel.edad=6;
+
+console.log(jon);
+
+
+
+</script>
+ 
+</body>
+</html>
