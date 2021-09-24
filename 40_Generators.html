@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos WeakSet_WeakMaps</title>
+</head>
+
+<body>
+<h1>Tipo de dato map</h1>
+
+<script>
+
+//para declarar un generador agregamos un * despues de la palabra function
+
+function* iterable(){
+   yield "Hola"; //funciona como un return
+   console.log("Hola Consola");
+   yield "Hola 2"; 
+   console.log("Seguimos con mas lineas de codigo");
+   yield "Hola 3";
+   yield "Hola 4";
+}
+let iterador =iterable();
+// console.log(iterador.next());
+// console.log(iterador.next());
+// console.log(iterador.next());
+// console.log(iterador.next());
+// console.log(iterador.next());
+
+for (const y of iterador) {
+   console.log(y)
+}
+
+//convertir una función generadore en un arreglo 
+
+const arr= [...iterable()];
+console.log(arr)
+
+function cuadrado(valor){
+   setTimeout(()=>{
+      return console.log({valor,resultado:valor*valor})
+   },Math.random()*1000)
+
+   
+}
+
+function* generador(){
+   console.log("inicia el generador");
+   yield cuadrado(0);
+   yield cuadrado(1);
+   yield cuadrado(2);
+   yield cuadrado(3);
+   yield cuadrado(4);
+   console.log("termina el generador")
+}
+
+let gen = generador(); 
+
+for(let y of gen){
+   console.log(y)
+}
+
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos WeakSet_WeakMaps</title>
+</head>
+
+<body>
+<h1>Tipo de dato map</h1>
+
+<script>
+
+const iterable =[1,2,3,4];
+const iterable2 =new Set([1,2,3,3,3,4,4,4,5]);
+const iterable3 ="new Set([1,2,3,3,3,4,4,4,5])";
+
+//Accedemos al iterador de nuestro iterable 
+const iterador = iterable[Symbol.iterator]();
+const iterador2 = iterable2[Symbol.iterator]();
+const iterador3 = iterable3[Symbol.iterator]();
+
+  
+console.log(iterable);
+console.log(iterador);
+
+console.log(iterador.next());
+console.log(iterador.next());
+console.log(iterador.next());
+console.log(iterador.next());
+console.log(iterador.next());
+
+let next= iterador.next();
+let next2= iterador2.next();
+let next3= iterador3.next();
+
+while (!next.done) {
+   console.log(next.value);
+   next=iterador.next();
+}
+
+console.log("---otro iterable--con set");
+
+while (!next2.done) {
+   console.log(next2.value);
+   next2=iterador2.next();
+}
+
+console.log("---otro iterable--con string");
+
+while (!next3.done) {
+   console.log(next3.value);
+   next3=iterador3.next();
+}
+</script>
+ 
+</body>
+</html>

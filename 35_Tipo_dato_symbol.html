@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos en JavaScript</title>
+</head>
+
+<body>
+<h1>NUevos tipos de datos en JavaScript</h1>
+
+<script>
+
+let id ="Hola";
+let id2="Hola";
+// se usa symbol para generar una referencia unica podemos usar una referencia como nombre 
+let id3= Symbol();
+let id4=Symbol();
+
+
+console.log(id===id2);
+console.log(id3===id4);
+
+// un simbolo es una referencia que no debe cambiar 
+//podemos referenciar estos simbolos, ejemplo nombre o saludar se pasan como primer parametro
+const NOMBRE = Symbol("Nombre");
+const SALUDAR = Symbol("Saludar");
+
+// la propiedad nombre de tipo simbolo se comportan como propiedades privadas dentro del objeto persona 
+//esto lo podemos ver tambien con la función (sakudar) que creamos se comporta como propiedad privada 
+const persona={
+   [NOMBRE]:"Andres",
+   
+}
+console.log(persona)
+persona.NOMBRE="Andres chaparro"
+
+console.log(persona.NOMBRE);
+console.log(persona[NOMBRE])
+
+
+persona[SALUDAR]=function(){
+   console.log("Hola a todos")
+}
+
+console.log(persona);
+persona[SALUDAR]();
+console.log("---------------")
+
+for(let propiedad in persona ){
+   console.log(propiedad)
+   console.log(persona[propiedad]);
+}
+
+//listar propiedades privadas de un objeto
+//Usamos Objetc.getOwenPropertySymbols y le pasamos como 
+//parametro el nombre del objeto del cual deseamos obtener las propiedades privadas
+let obtener=Object.getOwnPropertySymbols(persona)
+
+console.log(obtener)
+</script>
+
+</body>
+</html>

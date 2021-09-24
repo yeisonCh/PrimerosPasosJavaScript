@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos WeakSet_WeakMaps</title>
+</head>
+
+<body>
+<h1>Tipo de dato map</h1>
+
+<script>
+//no podemos verificar su tamaño, no podemos borar todos para eliminarlos debemos hacerlo uno por uno
+//No son elementos iterables
+
+/*
+no podemos declarar un WeakSert e inicializarlos en una sola linea.
+
+const ws = new WeakSet([1,2,2,3,5,3,4,5,"Hola","HOLA",true, false, false, {},{}]);
+*/
+
+/*
+const ws = new WeakSet();
+//solo aceptan objetos
+
+let valor1 ={"valor":1};
+let valor2 ={"valor":2};
+let valor3={"valor":3};
+let valor4 ={"valor":4};
+
+ws.add(valor1);
+ws.add(valor2);
+ws.add(valor3);
+
+console.log(ws);
+console.log(ws.has(valor1));
+console.log(ws.has(valor4));
+
+ws.delete(valor4);
+
+console.log(ws)
+
+setInterval(() => console.log(ws), 1000);
+
+setTimeout(() => {
+   valor1=null;
+   valor2=null;
+   valor3=null;
+}, 5000);
+
+*/
+
+const wm = new WeakMap();
+//solo aceptan objetos
+
+let llave1 ={};
+let llave2 ={};
+let llave3={};
+let llave4 ={};
+
+wm.set(llave1,1);
+wm.set(llave2),2;
+wm.set(llave3),3;
+
+
+console.log(wm);
+console.log(wm.has(llave4))
+  
+</script>
+ 
+</body>
+</html>

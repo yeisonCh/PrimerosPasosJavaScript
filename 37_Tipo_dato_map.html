@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos en JavaScript</title>
+</head>
+
+<body>
+<h1>Tipo de dato map</h1>
+
+<script>
+
+   //LOS MAP SON VALORES DE TIPO CONPLEJOS AL IGUAL QUE LOS SET
+
+const mapa=new Map();
+//para agregar valores al mapa el cual recibe como paramatros el 
+//propiedad y valor 
+
+mapa.set("Nombre", "Andres");
+mapa.set("Apellido", "Chaparro");
+
+console.log(mapa);
+//para saber lagitud de una map usamo size
+console.log(mapa.size);
+//para sabder si existe una propiedad utilizamos has
+console.log(mapa.has("correo"));
+console.log(mapa.has("Nombre"));
+
+//para mostrar el valor de una propiedad 
+console.log(mapa.get("Nombre"));
+
+//podemos sobre escribir una llave o propiedad de un mapa 
+
+mapa.set("Nombre", "Josue Gabriel");
+console.log(mapa.get("Nombre"));
+//podemos eliminar llaves o propiedades y su valor 
+
+mapa.delete("Apellido");
+console.log(mapa);
+
+mapa.set("Edad",10);
+mapa.set("correo","josue@hotmail.com");
+
+
+//para recorrer un map usamos el for y destructuración para imprimir la llave o propiedad y el valor
+
+for (let[key,value] of mapa){
+   console.log(`llave: ${key}, valor: ${value}`);
+}
+
+const mapa2 = new Map([
+["Nombre", "Joel Alejandro"],
+["Edad", 6],
+["correo","Joel@yahoo.com"],
+["peso", 20],
+[null, "es nulo"],
+[true, "valor bolean que es verdadero"],
+[false, "valor bolean que es falso"]
+]);
+
+for (let[key,value] of mapa2){
+   console.log(`llave: ${key}, valor: ${value}`);
+}
+
+//podemos crear arreglos con las llaves y arreglo con los valores
+//esto con la ayuda de la destructuración 
+
+const llavesMapa2 =[...mapa2.keys()];
+const valorMapa2 = [...mapa2.values()];
+
+console.log(llavesMapa2);
+console.log(valorMapa2);
+
+
+</script>
+ 
+</body>
+</html>
