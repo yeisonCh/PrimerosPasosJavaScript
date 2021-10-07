@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos WeakSet_WeakMaps</title>
+</head>
+
+<body>
+<h1>Tipo de dato map</h1>
+
+<script>
+
+//creamos un objeto vacio
+
+const objUsuario={};
+
+console.log(objUsuario);
+
+const usuarios=["Jon","Andres","Joel","Miguel","Paola"];
+
+usuarios.forEach((usuario,index)=>objUsuario[`id_${index}`]=usuario);
+
+console.log(objUsuario)
+
+
+let aleatorio= Math.random(Math.random()*100+5);
+
+const obCosa={
+   propiedad:"valor",
+   [`id_${aleatorio}`]:"Valor aleatorio"
+};
+
+console.log(obCosa);
+
+const elementos=["casa","mesa","borrador","carro","Pelota"];
+
+elementos.forEach((elemento,index)=>obCosa[`id_${index}`]=elemento);
+
+console.log(obCosa)
+
+
+</script>
+ 
+</body>
+</html>

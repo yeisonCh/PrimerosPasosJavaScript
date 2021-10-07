@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nuevos tipos de datos WeakSet_WeakMaps</title>
+</head>
+
+<body>
+<h1>Tipo de dato map</h1>
+
+<script>
+
+console.log(this);
+this.lugar="Estamos en el contexto global";
+
+function saludar(saludo,aQuien){
+   console.log(`${saludo} ${aQuien} desde el ${this.lugar}`)
+}
+
+saludar();
+
+const obj={
+   lugar:"estamos en el contexto Objeto"
+}
+
+saludar.call(obj);
+saludar.call(obj,"hola buenas noches","Josue");
+saludar.call(null,"hola buenas noches","Josue");
+saludar.call(this,"hola buenas noches","Josue");
+saludar.apply(obj,["Buenos días", "Joel"]);
+saludar.apply(null,["Buenos días", "Joel"]);
+saludar.apply(this,["Buenos días", "Joel"]);
+
+const personas={
+   nombre:"Joel",
+
+   saludar(){
+      console.log(`Hola ${this.nombre}`)
+   }
+}
+
+const otraPersona={
+   //usamos la palabra bind para enlasar el contexto de un objeto
+   //le pasamos por parametros el objeto que queremos enlazar
+   saludar:personas.saludar.bind(personas)
+}
+personas.saludar();
+otraPersona.saludar();
+</script>
+ 
+</body>
+</html>
