@@ -37,7 +37,8 @@
     //ahora clonamos un nodo
     /*creamos una varible clone y usamos el metodo
     importNode este resive como parametros la variable donde tenemos el nodo 
-    que vamos a clonar y true para que nos clone todo el nodo */
+    que vamos a clonar y true para que nos clone todo el nodo o estructura 
+    si le asifgnamos false solo nos copia la etiqueta template*/
     const $clone=document.importNode($template,true)
 
     $fragment.appendChild($clone);
