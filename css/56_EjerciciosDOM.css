@@ -1,0 +1,271 @@
+/*Reseteo inicial*/
+:root{
+    /*---variables---*/
+    --main-font:sans-serif;
+    --font-size: 16px;
+    --main-color:#f7df1e;
+    --second-color:#222;
+    --main-modal-color:rgba(247,222,30,0.85);/*cuarto parametro nos permite vajar la opacidad*/
+    --secod-modal-color:rgba(34,34,34,0.85);
+    --container-width:1200px;
+    /*se usa la variable para generar contenedores con un ancho (width de 1200px)*/
+}
+
+/*reset basico para html*/
+html{
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth; /*para dar trancisión no subita al navegar para ir se una sección a otra
+    */
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;/*para que todos los elementos del documento hereden el box-sizing*/
+}
+
+body{
+    margin: 0;/*reseteamos el margin de los naviegadores*/
+    overflow-x: hidden;
+    /*para que todo lo que se desborde por la horizontal se oculte y no genere barra de desplazamiento*/
+}
+
+img{
+    /*si usamos imagenes esto nos sirve para que se adapten a la maxima anchura del contenedor*/
+    max-width: 100%;
+    height: auto;
+}
+
+/*----css menu de hamburguesa-----*/
+.header{
+    position: sticky;/*cuando el header llegue a cero en el margen de top
+    se va a comportar como si estubiera fija*/
+    top: 0;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color:var(--second-color);
+}
+
+/*---reset h1----*/
+.header h1{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.section{
+    padding: 2rem;
+    padding-top: 4rem;/*para corregir el margen de arriba*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--container-width);
+    min-height: 100vh;
+    text-align: center;
+}
+
+/*clase para el panel*/
+.panel{
+    position: fixed;
+    z-index: 998;
+    width: 100%;
+    /*fijamos top 0 y botton 0 para estiar el elemento, ó que ocupe toda la pantalla*/
+    overflow-y: auto; /*propiedad overflow para obtener el contenidl que se desvorda en este caso en y  automatico para que genere su propia barra de scroll*/
+    top: 0;
+    bottom: 0;
+    /*fijamos left 0 y right 0 para anchar el elemento*/
+    left: 0;
+    right: 0;
+    background-color: var(--secod-modal-color);
+    /*agregar efecto de trancisión de tres segundos ease que es de aceleracion*/
+    transition: transform 0.3s ease;
+    /*para mover el panel o el menú*/
+    /*para desplazar el menu lo hacemo usando cordenadas X(0) para que no se mueva este eje y Y(-100%)*/
+    transform: translate(0,-150%);
+}
+
+
+/*cuando la clase panel este activada*/
+.panel.is-active{
+    transform: translate(0,0); /*para ubicar el panel nuevamente, poner visible el panel*/
+
+} 
+
+.panel-btn{
+    position: fixed; /*posicionamiento de manera fija*/
+    z-index: 999; /*profundidad, para que todo el contenido aparesca detras del boton*/
+    /*posicionamiento del boton*/
+    bottom: 1vh;
+    right: 1vw;
+    /*tamaño del boton*/
+    width:  4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    /*aplicacion de flexbox*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*color de fondo*/
+    background-color: var(--main-color);
+        
+}
+
+
+.menu{
+    width: inherit;/*que menu herede la anchura de su contenedor*/
+    display: flex;
+    flex-direction: column; /*dirección columna*/
+    justify-content: space-evenly; /*space-evenly da espaciado proporcional entre elementos*/
+    align-items: center;
+    text-align: center;
+}
+
+.menu a {
+    padding: 2rem;
+    width: inherit; /*que herede la anchura del contenedor*/
+    display: block; /*que sean elementos de bloque*/
+    font-size: 1.5rem; /*aumentar el tamaño de letra*/
+    text-decoration: none; /*para quitar la linea de decoración de los enlaces*/
+    color: var(--main-color);/*se agrega color*/
+    transition: all 0.3s ease; /**/
+} 
+
+.menu a:hover{
+    font-weight: bold;
+    color: var(--second-color);
+    background-color: var(--main-modal-color);
+}
+
+/*------Estilos del teclado --------*/
+
+.stage{
+    display: flex;
+    min-height: 50vh;
+    background-color: var(--second-color);
+}
+
+.ball{
+    margin: auto;
+    width: 4rem; /**ancho */
+    height: 4rem;/*largo*/
+    border-radius: 50%;/*bordes*/
+    background-color: var(--main-color);
+}
+
+/*------------scrollTopButton-----*/
+.scroll-top-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: calc(4.25rem + 1vw);/*usamos la funcion calc para no tapar el boton de hamburger*/
+    width: 4rem; 
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    /*---aumentamos el tamaño de la fuente-----*/
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+}
+
+/*--invertimos los colores en el hover (cuando nos posicionamos sobre del boton) del boton*/
+.scroll-top-btn:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*----- DarkThemeButton -------*/
+.dark-theme-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    left: 1vw;/*usamos la funcion calc para no tapar el boton de hamburger*/
+    width: 4rem; 
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    /*---aumentamos el tamaño de la fuente-----*/
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+}
+
+/*--invertimos los colores en el hover (cuando nos posicionamos sobre del boton) del boton*/
+.dark-theme-btn:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+.dark-mode{
+    background-color:  var(--second-color);
+    color: var(--main-color);
+}
+
+/*-----Network Status------*/
+.online,
+.offline{
+    position: sticky;
+    top: 0;
+    z-index: 1005;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #1b5e;
+    color: #fff;
+    
+}
+
+.offline{
+    background-color: #b71c1c;
+}
+
+/* estilos pra el filtro de busqueda*/
+.cards{
+    display: grid;
+    /*propiedad que permite definir las columnas, función repeat (#columnas que queremos repetir (valor que va atener cada columna))
+    auto-fit => en base al numero de elemntos hijos que  tiene el elemento grid se vana a apilar 
+    función minmax => permite variar el tamano de la columna primer valor tamaño minimo  y el tamano maximo que
+    en este caso es una fraccion*/
+    grid-template-columns: repeat(outo-fit, minmax(250px, 1fr));
+    
+}
+/*estilos para las tarjetas*/
+.card{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    transition: all 0.3s ease-out;
+}
+/*imagen que estan dentro de las tarjetas*/
+.card img{
+    width:  100%;
+    height: auto;
+}
+
+/*texto de las tarjetas*/
+.card figcaption{
+    padding: 1rem;
+}
+
+/*clase para quitar las targetas que no cumplen */
+.filter{
+    /*display: none;*/
+    visibility: hidden;
+    opacity: 0;
+}
