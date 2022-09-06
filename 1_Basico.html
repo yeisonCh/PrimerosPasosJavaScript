@@ -60,7 +60,7 @@
             console.log(objeto);
             console.log(colores);
 
-            //las constantes no deja agregar o cambiar su valor con los datsos de tipos primitivos
+            //las constantes no deja agregar o cambiar su valor con los datos de tipos primitivos
             /*
             con los objetos, arreglos y demás, si nos permite agregar propiedades, no importa si uilizamos
             const, var o let 
@@ -108,24 +108,31 @@
             let c =5.67;
             let d = "3.1416";
 
-            console.log(a,b,c.toFixed(1));
+            console.log('los numeros con toFixed: '+a,b,c.toFixed(1));
             //el metodo toFixed me permite redondear un numero decimal y recibe como parametro 
             // la cantidad de unidades decimales despues de la coma que deseo
 
-            console.log(parseInt(c));  //parseInt devuelve la parte entera en este caso de 5.67 lo redondea 
+           //parseInt devuelve la parte entera en este caso de 5.67 lo redondea 
+            console.log(parseInt(c));  
 
-            console.log(typeof c, typeof d);
+            // typeof nos devuelve el tipo de dato que almacena una variable
+            console.log('tipos de datos: '+typeof c, typeof d);
 
             console.log(parseInt(d));
             console.log(d);
-            console.log(c+parseInt(d));
+            console.log('sumamos dos datos: '+c+parseInt(d));
 
             //booleanos
 
+            console.log('para cero devuelve false como valor boolean ');
             console.log(Boolean(0));
+            console.log('para cualquier valor positivo o negativo devuelve ture como valor boolean ');
             console.log(Boolean(-7));
+            console.log('para cadena vacia devuelve false como valor boolean ');
             console.log(Boolean(""));
-            console.log(Boolean({}));
+            console.log('para objeto no importa si esta vacio devuelve true como valor boolean ');
+            console.log( Boolean({}));
+            console.log('para array no importa si esta vacio devuelve true como valor boolean');
             console.log(Boolean([]));
 
             // null undefine NaN

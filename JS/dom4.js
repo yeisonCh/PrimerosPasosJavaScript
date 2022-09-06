@@ -16,7 +16,7 @@
 $cards.insertBefore($newCard, $cards.firstElementChild);
 
 
-//eloiminar un nodo
+//eliminar un nodo
 $cards.removeChild($cards.lastElementChild);
 
 //el DOM tiene un metodo que nos permite clocarnar

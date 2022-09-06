@@ -40,7 +40,7 @@
                 suma=num1+num2;
                 return suma;
             }
-
+            console.log('se llama a la función sumar y se pasan como parametros 2 y 4');
             console.log(sumar(2,4));
 
             function saludo(nombre, edad){
@@ -48,14 +48,16 @@
                 console.log(`hola mi nombre es ${nombre} y tengo ${edad} años`);
             }
 
-            saludo("Josue",10)
-            saludo();
+            saludo("Josue",10);
+            saludo(); // si  no le pasamos parametros, no saldra error pero, en los parametros sale undefined
 
             //función expresada
             /*
             no podemos llamar una función expresada 
             antes de declararlas 
             
+
+            podemos asignar funciones a variables
             */
 
             const funcionExpresada = function(){
