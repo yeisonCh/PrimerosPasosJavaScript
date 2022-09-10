@@ -43,8 +43,8 @@
 
             /* Operadores logicos
                 ! not o negación 
-                || or ó (Ó)
-                && and ó y logico
+                || or ó (Ó) devuelve true si una de las condiciones se cumple
+                && and ó y logico devuelve true si las condiciones se cumplen y alguna no se cumple devuleve false
             
             */
 
@@ -53,8 +53,15 @@
             console.log(8>9);
             console.log(8==9);
 
+//los resultados son diferentes cuando usamos estos operadores
+            console.log(7==7);
+            console.log("7"==7);
+            console.log(0==false);
 
-            
+            console.log(7===7);
+            console.log("7"===7);
+            console.log(0===false);
+           
         </script>
     </body>
 

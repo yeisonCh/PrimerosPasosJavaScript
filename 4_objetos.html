@@ -10,10 +10,10 @@
 
 
     <body>
-        <h1>Fundamentos de JavaScript</h1>
+        <h1>Fundamentos de JavaScript objetos</h1>
         <script>
-            //objetos se beden declarar con const
-
+            //objetos se beden declarar con const ya que durante la ejecución del programa
+//puede cambiar el contenido, pero como tal sigue siendo un objeto
             const b={
 
             }
@@ -25,28 +25,29 @@
                 pasatiempo:["caminar","bicicleta","Futbol"],
                 sotero:false,
                 contacto:{
-                    email:"jontorres@algo.com",
-                    twitter:"@jontorres",
-                    telefono:"3245614587",
+                    email:"joel@algo.com",
+                    twitter:"@joel",
+                    telefono:"3245614587"
 
                     
                 },
                 saludar:function(){
-                        console.log("Hola a todos")
+                        console.log("Hola a todos");
                     },
                 decirMiNombre:function(){
                     console.log(`hola mi nombre ${this.nombre} y me pueden seguir en ${this.contacto.twitter} y mi pasatiempo es ${this.pasatiempo[0]}`)
                 }
-
+// dentro de un objeto a las variable se les llama atributos y a las funciones se les llama metodos
             }
-            console.log(jon.nombre)
-            console.log(jon.pasatiempo)
-            console.log(jon.pasatiempo[2])
-            console.log(jon.contacto.twitter)
+            console.log(jon.nombre);
+            console.log(jon.pasatiempo);
+            console.log(jon.pasatiempo[2]);
+            console.log(jon.contacto.twitter);
             jon.saludar();
             jon.decirMiNombre();
-            console.log(Object.keys(jon))
-            console.log(Object.values(jon))
+            console.log(Object.keys(jon));//metodo object.keys para mostrar atributos y metodos del objeto
+            console.log(Object.values(jon));//metodo object.values para mostrar los valores del objeto
+        
             
 
             

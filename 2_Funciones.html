@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fundamentos JavaScript</title>
+        <title>Fundamentos JavaScript Funciones</title>
 
     </head>
 
@@ -18,13 +18,23 @@
                 console.log("uno");
                 
 
+funciónDeclarada();
+
             }
+            function funciónDeclarada(){
+                console.log("Esta es una función declarada, la cual se puede ejecutar en cualquier parte del codigo, incluso antes de ser decladara ");
+                console.log("JavaScript hoisting o elevar las funciones, variables declaradas con var a un ambito global donde las podemos usar en cualquier parte del codigo ");
+            }
+
+        funciónDeclarada();
 
             // llamar una funión 
 
-            estoEsUnFuncion()
+            estoEsUnFuncion();
+            //una función puede recivir valores 
 
             //función que devuelve un valor, solo puede contener un return
+            //ya que cuando una funcíon detiene su flojo con el primer return
 
             function devuelveValor (){
 
@@ -49,8 +59,9 @@
             }
 
             saludo("Josue",10);
-            saludo(); // si  no le pasamos parametros, no saldra error pero, en los parametros sale undefined
+            // si  no le pasamos parametros, no saldra error pero, en los parametros sale undefined
 
+            saludo(); 
             //función expresada
             /*
             no podemos llamar una función expresada 
@@ -60,9 +71,12 @@
             podemos asignar funciones a variables
             */
 
+            //función anonima.
+            //función expresada es la que se le asigna a una variable o constante.
             const funcionExpresada = function(){
 
-                console.log ("esta es una función expresada, la cual se ha asignado a una variable")
+                console.log ("esta es una función expresada, la cual se ha asignado a una variable");
+                console.log("si es la llammos antes de ser expresada javaScript nos arojara un error porque se esta llamando antes de la inicialización");
             }
 
           funcionExpresada();

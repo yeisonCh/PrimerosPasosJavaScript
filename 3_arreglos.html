@@ -10,7 +10,7 @@
 
 
     <body>
-        <h1>Fundamentos de JavaScript</h1>
+        <h1>Fundamentos de JavaScript arreglos</h1> 
         <script>
             //arreglos o array se acostubra a declararlos con la palabra const 
             //para arreglos y datos compuestos, como objetos y clases 
@@ -20,14 +20,28 @@
             console.log(a, `la cantidad de elementos de a es ${a.length}` );
             console.log(a[0]);
             console.log(b[4][4]);
-
+            
 
             const colores = ["Blanco","Verde","Azul","Naranja"];
-
+//primer parametro es el elemento del array y el segundo parametro es el indice que ocupa el elemento dentro del array
             colores.forEach(function(el,index){
 
                 console.log(`<li id="${index}">${el}</li> `);
             })
+
+            //otra forma de crear un arreglo usando el objeto Array de JavaScript usando su metodo array.of
+            const c = Array.of("z","y","z",8,9,7);
+            console.log(c);
+            //se crea un array con 10 posiciones y se usa el metodo fill para darle el mismo 
+            //valor a las posiciones en este caso con false
+            const d= Array(10).fill(false);
+             console.log(d);
+
+             //algunos metodos de los arreglos 
+             colores.push("Amarillo");//para agregar elementos al inicio
+             colores.pop();//quita el ultimo elemento
+
+
         </script>
     </body>
 
