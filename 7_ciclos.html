@@ -4,13 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fundamentos JavaScript</title>
+        <title>Fundamentos JavaScript Ciclos</title>
 
     </head>
 
 
     <body>
-        <h1>Fundamentos de JavaScript</h1>
+        <h1>Fundamentos de JavaScript Ciclos</h1>
         <script>
             // Estructuras de control ciclos o bucles 
             
@@ -25,6 +25,7 @@
 
             }
 
+//siempre se va ha ejecutar lo que esta dentro del do  minimo una vez, y luego si inicia a evaluar el while
             do {
                 console.log("condicional do while",contador);
                 contador++;
@@ -34,27 +35,52 @@
             //bucle for
             const a = ["Andres",2,3,"josue",true,false];
 
+            //el for es un bucle que consta de tres partes 
+            //inicialización de la variable que nos ayudara a recorrer el bucle, 
+            //luego la condición a evaluar 
+            //por ultimo el incremento ó decremento de la variable que inicializamos 
             for (let index = 0; index < a.length; index++) {
                 const element = a[index];
                 console.log(element);
                 
             }
             
+            
+ /****   Construcción de un for in en javascript **********************
+  *     solo me permite recorrer propiedades de un objeto
+  * 
+  *         for (cosnt Key in object){
+  *         `Key: ${propiedad},value ${pedro[propiedad]}`
+  * 
+  *         usamos la palabra key para referirnos a la propiedad 
+  *         y usamos value para referirnos al valor de la propiedad del objeto 
+  *         }
+  * 
+ */
+
             const pedro={
                 nombre:"pedro",
                 apellido:"Romero",
                 edad:35
             }
+
+            //el for in, nos permite iterara las propiedades de un objeto            
             //nos permite recorrer todos los elementos de un objet
             for (const propiedad in pedro) {
-                            
+                console.log(propiedad);
                 console.log(`Key: ${propiedad},value ${pedro[propiedad]}`);
             }
 
+
+
+        // Construcción del for of
+        // mientras que el for of me permite recorrer todos los elemntos del objeto que sean iterables
+        //es decir que sea de tipo primitivo como los array o los string
             let cadena="Hola mundo";
             for (const iterator of cadena) {
                 console.log(iterator);
             }
+
 
         </script>
     </body>

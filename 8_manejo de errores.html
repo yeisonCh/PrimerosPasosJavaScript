@@ -4,13 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fundamentos JavaScript</title>
+        <title>Fundamentos JavaScript Manejo de errores</title>
 
     </head>
 
 
     <body>
-        <h1>Fundamentos de JavaScript</h1>
+        <h1>Fundamentos de JavaScript manejo de errorres</h1>
         <script>
             // Estructuras de control ciclos o bucles 
             
@@ -38,7 +38,31 @@
     console.log(numeros[i])
 }
 
+try {
+    console.log("Try se agrega el codigo a evaluar");
+    noExiste
+} catch (error) {
+    console.log('Catch, captura cualquier error serguido o lanzado en el try');
+    console.log(error);
+}finally{
+console.log('este bloque finally se ejecuta siempre al final de un bloque try catch');
+}
+
+try {
+    let numero=i;
+    if(isNaN(numero)){
+        throw new Error('El caracter introducido no es un número');
+    }
+    console.log(numero*numero);
+} catch (error) {
+    console.log(`Se produjo el siguiente error: ${error}`);
+}
+
         </script>
+
+
+
+
     </body>
 
 
