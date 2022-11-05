@@ -4,25 +4,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fundamentos JavaScript</title>
+        <title>Fundamentos JavaScript desctrucción</title>
 
     </head>
 
 
     <body>
-        <h1>Fundamentos de JavaScript</h1>
+        <h1>Fundamentos de JavaScript destrucción</h1>
         <script>
+// break se usa detener el flujo del prograba y salirse de bucle 
+
+const numeros= [1,2,3,4,5,6,7,8,9];
+for(let i=0; i<numeros.length; i++){
+    console.log(i)
+}
+
+console.log("usamos break para detener la lectura del bucle");
+for(let i=0; i<numeros.length; i++){
+    
+    if(i===5){
+        break;
+    }
+    console.log(`usamos un condicional para comparar i a 5 cuando esto pasa de detiene el flujo e imprime ${i}`);
+}
+console.log("------------------usamos continue para saltar la lectura del bucle-------");
+// cuando usamos continue
+for(let i=0; i<numeros.length; i++){
+    
+    if(i===5){
+        continue;
+    }
+    console.log(`usamos un condicional para comparar i a 5`);
+    console.log(`cuando esto pasa salta la siguiente line e imprime el resto ${i}`);
+}
+
+
+
+
             // destructuración
             
             // Sin destructuración
+            console.log(`Sin el uso de la destructuración`);
+            console.log(`a un arreglo le asignamos nombre de variable a cada elemeto`);
             const numero=[1,2,3];
             let uno=numero[0],
-                dos=numero[1]
+                dos=numero[1],
                 tres=numero[2];
 
                 console.log(uno,dos,tres);
 
                 //con destructuración
+                console.log(`Usando la destructuración`);
+                console.log(`nos sirve para asignarle variales a los elementos de un arreglo ene una misma linea `)
             const[one,two,three]=numero;
             console.log(one,two,three);
             
@@ -31,6 +64,8 @@
                 apellido:"Peres",
                 edad:32
             }
+            console.log(`***************************`);
+            console.log(`Cuando se uda la destructuración con objetos, el nombre de las variables siempre tienen que apuntar o conincidir con los nombres de las propiedades del objeto`);
             let{nombre,apellido,edad}=persona;
             console.log(nombre,apellido,edad);
 

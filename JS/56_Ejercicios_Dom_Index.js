@@ -22,7 +22,8 @@ d.addEventListener("DOMContentLoaded",(e)=>{
     hamburgerMenu(".panel-btn",".panel", ".menu a");
     digitaClock("#reloj", "#activar-reloj","#desactivar-reloj");
     alarm("assets/sonido.mp3","#activar-alarma","#desactivar-alarma");
-    countdown("countdown","Dec 29,2021 15:18:00","Felicidades compañero");
+    //los prametros que necesitamos tres parametros
+    countdown("countdown","10,07,2022 21:57:00","Felicidades compañero");
     scrollTopButton(".scroll-top-btn");
     responsiveMedia("youtube","(min-width:1024px)",`<a href="https://www.youtube.com/watch?v=AJrFs2SJcu0" target="_blank" rel="noopener">Ver video</a>`,`<iframe width="560" height="315" src="https://www.youtube.com/embed/AJrFs2SJcu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
     /*cuando utilizamos la finción getElementsByID solo pasamo el nombre del id sin punto cpmo primer parametro
