@@ -6,7 +6,12 @@
 </head>
 
 <body>
-
+    <h1>Prototipos y programacion orientada a objestos</h1>
+    <br>
+    <br>
+    <p>Todas las actividades que se han realizado hasta este punto son ejercicios de consola 
+        por lo cual solo las podemos ver desde la consola.
+    </p>
 
 <script>
    /* Clases
@@ -16,7 +21,7 @@
    
    */
 
-   // clases 
+   // las clases en JavaScript las interpreta como un prototipo 
 
    class Animal{
        constructor(nombre, genero){
@@ -40,9 +45,11 @@
     
    }
 
+   //se usa la palabra extends para que la clase Perro herede de la clase Animal
+
    class Perro extends Animal{
     constructor(nombre, genero, tamanio){
-//El metodo super() llama al constructor de la clase Animal
+//El metodo super() llama al constructor de la clase Animal (o de la clase padre)
     super(nombre,genero);
     this.tamanio=tamanio;
     }

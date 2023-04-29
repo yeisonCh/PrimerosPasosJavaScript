@@ -7,11 +7,14 @@
 
 <body>
 
-
+    <h1>Prototipos y programacion orientada a objestos</h1>
+    <p>Todas las actividades que se han realizado hasta este punto son ejercicios de consola 
+        por lo cual solo las podemos ver desde la consola.
+    </p>
 <script>
    /* POO
-   Clases: modelo a seguir
-   Objetos: Es una instancia de la clase 
+    Clases: modelo a seguir
+    Objetos: Es una instancia de la clase 
     Atributos => caracteristicas o propiedades de un onjeto
     Metodos => son las acciones que un elemto puede hacer
         (son funciones dentro de un objeto   
@@ -37,7 +40,7 @@
 
    // Prototipos 
 
-   //Función constructora
+   //Función constructora o constructor
    function Animal(nombre, genero){
        //Atributos
         this.nombre=nombre;
@@ -49,22 +52,29 @@
 
    }
 
+   //se sacan los metodos del constructor para mejorar el rendimiento de una aplicacion
    // para asignar funciones o metodos a una clase o función constructor
         Animal.prototype.sonar=function(){
             console.log("holaaa, hago sonidos")
         }
 
         Animal.prototype.saludar=function(){
-            console.log("holaaa, desede la función saludar")
+            console.log(`hola me llamo ${this.nombre}`)
         }
 
 
 
-   const snoopy = new Animal("Sno0py","Macho"),
+   const snoopy = new Animal("Snoopy","Macho"),
    lolaBonny= new Animal("Lola buuny", "Hembra ")
 
    console.log(snoopy)
    console.log(lolaBonny)
+
+   snoopy.saludar();
+   snoopy.sonar();
+
+   lolaBonny.saludar();
+   lolaBonny.sonar();
 
 </script>
 

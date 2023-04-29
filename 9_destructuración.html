@@ -11,6 +11,10 @@
 
     <body>
         <h1>Fundamentos de JavaScript destrucción</h1>
+
+        <p>Todas las actividades que se han realizado hasta este punto son ejercicios de consola 
+            por lo cual solo las podemos ver desde la consola.
+        </p>
         <script>
 // break se usa detener el flujo del prograba y salirse de bucle 
 
@@ -23,12 +27,14 @@ console.log("usamos break para detener la lectura del bucle");
 for(let i=0; i<numeros.length; i++){
     
     if(i===5){
+        //rompe la estructura y no sigue la ejecucion del ssietma
         break;
     }
     console.log(`usamos un condicional para comparar i a 5 cuando esto pasa de detiene el flujo e imprime ${i}`);
 }
 console.log("------------------usamos continue para saltar la lectura del bucle-------");
-// cuando usamos continue
+// cuando usamos continue saltamos el valor en este caso
+//salta la posición del arreglo
 for(let i=0; i<numeros.length; i++){
     
     if(i===5){
@@ -65,9 +71,12 @@ for(let i=0; i<numeros.length; i++){
                 edad:32
             }
             console.log(`***************************`);
-            console.log(`Cuando se uda la destructuración con objetos, el nombre de las variables siempre tienen que apuntar o conincidir con los nombres de las propiedades del objeto`);
+            console.log(`Cuando se usa la destructuración con objetos, el nombre de las variables siempre tienen que apuntar o conincidir con los nombres de las propiedades del objeto`);
+            //los nombres de las variables en la destructuración deben ser iguales a las propiedades de los objesto
             let{nombre,apellido,edad}=persona;
             console.log(nombre,apellido,edad);
+
+
 
             // Objetos literales
 
@@ -87,8 +96,8 @@ for(let i=0; i<numeros.length; i++){
             perro.ladrar()
 
             const dog ={
-                nombre2,
-                edad2,
+                nombre2,//toma el valor de la varibale
+                edad2, //toma el valor de la variable
                 raza:"callejero",
                 ladrar(){
                     console.log("guauu guauuuu guauuuu!!")

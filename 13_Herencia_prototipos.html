@@ -7,7 +7,10 @@
 
 <body>
 
-
+    <h1>Prototipos y programacion orientada a objestos</h1>
+    <p>Todas las actividades que se han realizado hasta este punto son ejercicios de consola 
+        por lo cual solo las podemos ver desde la consola.
+    </p>
 <script>
    /* POO
    Herencia
@@ -28,12 +31,14 @@
 
    }
 
-   //Prototipo perro
+   //Prototipo perro 
 
    function Perro(nombre,genero,tamanio){
        /* Para heredar los atributos y los metodos de la clase 
        o prototipo Animal Usamos una varibale y la igualamos 
        al prototipo deseado*/
+
+       //creamos la variable super y le decimos que es igual al constructor Animal
         this.super=Animal  
         this.super(nombre,genero);
         this.tamanio=tamanio;

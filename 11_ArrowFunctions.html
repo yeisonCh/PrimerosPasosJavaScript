@@ -6,14 +6,34 @@
 </head>
 
 <body>
-
+    <h1>Arrow functions</h1>
+    <p>Todas las actividades que se han realizado hasta este punto son ejercicios de consola 
+        por lo cual solo las podemos ver desde la consola.
+    </p>
 
 <script>
+//las funciones declaradas se pueden invocar incluso antes de ser creada
+console.log(`llamando una función declarada antes de construirla`);
+saluda1();
+//ejemplo función declarada 
+function saluda1(){
+    console.log(`hola a todos desde una función declarada`);
+}
+
+
+    //ejemplo de funcion expresada 
+    const  saluda = function(){
+        console.log("Hola a todos desde la función expresada");
+    }
+
+    saluda();
+
     const saludar =()=>{
         console.log("Hola a todos");
     }
 	
-    const despedir=()=> console.log("Adios a todos");
+    //una arrow functions
+    const despedir=(nombre)=> console.log("Adios a todos " + nombre);
 
     // Ejemplo de función sin parentesis ni corchetes
     const ejemplo=nombre=>console.log(`este es un ${nombre}`);
@@ -28,7 +48,7 @@
 
     const numeros=[1,2,3,4,5,6];
 
-    numeros.forEach((valor,indice)=> console.log(`${valor} esta en la posición ${indice}`))
+    numeros.forEach((elemento,index)=> console.log(`${elemento} esta en la posición ${index}`))
     
     // PAra las funciones de varias lineas debo colocar los corchetes
     // no se debe usar arrow funtions dentro de un objeto
@@ -45,7 +65,7 @@
 
 
     saludar();
-    despedir();
+    despedir("andres");
     console.log(sumar(5,6));
     console.log(resta(5,6));
 	variasLineas();
